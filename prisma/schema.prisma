@@ -1,0 +1,85 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model customer {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  orders order[]
+}
+
+model orderItem {
+  id         Int      @id @default(autoincrement())
+  order_id   Int      @unique
+  product_id Int      @unique
+  quantity   Int
+  unit_price Float
+  created_at DateTime @default(now())
+}
+
+model order {
+  id           Int       @id @default(autoincrement())
+  customer_id  Int
+  warehouse_id Int
+  status       String
+  total_amount Float
+  created_at   DateTime  @default(now())
+  updated_at   DateTime  @updatedAt
+  customer     customer? @relation(fields: [customerId], references: [id])
+  customerId   Int?
+  user         user?     @relation(fields: [userId], references: [id])
+  userId       Int?
+}
+
+model product {
+  id                 Int                 @id @default(autoincrement())
+  sku                String              @unique
+  name               String
+  price              Int
+  created_at         DateTime            @default(now())
+  updated_at         DateTime            @updatedAt
+  warehouseInventory warehouseInventory?
+}
+
+model user {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  orders order[]
+}
+
+model warehouse {
+  id                 Int                 @id @default(autoincrement())
+  name               String
+  latitude           Float
+  longitude          Float
+  created_at         DateTime            @default(now())
+  updated_at         DateTime            @updatedAt
+  warehouseInventory warehouseInventory?
+}
+
+model warehouseInventory {
+  id           Int      @id @default(autoincrement())
+  warehouse_id Int      @unique
+  product_id   Int      @unique
+  quantity     Int
+  version      Int      @default(1)
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
+
+  warehouse warehouse @relation(fields: [warehouse_id], references: [id])
+  product   product   @relation(fields: [product_id], references: [id])
+}
