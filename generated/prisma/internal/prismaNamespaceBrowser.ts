@@ -51,13 +51,12 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  customer: 'customer',
-  orderItem: 'orderItem',
-  order: 'order',
-  product: 'product',
-  user: 'user',
-  warehouse: 'warehouse',
-  warehouseInventory: 'warehouseInventory'
+  Customer: 'Customer',
+  Order: 'Order',
+  OrderItem: 'OrderItem',
+  Product: 'Product',
+  Warehouse: 'Warehouse',
+  WarehouseInventory: 'WarehouseInventory'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -87,31 +86,29 @@ export const CustomerScalarFieldEnum = {
 export type CustomerScalarFieldEnum = (typeof CustomerScalarFieldEnum)[keyof typeof CustomerScalarFieldEnum]
 
 
-export const OrderItemScalarFieldEnum = {
-  id: 'id',
-  order_id: 'order_id',
-  product_id: 'product_id',
-  quantity: 'quantity',
-  unit_price: 'unit_price',
-  created_at: 'created_at'
-} as const
-
-export type OrderItemScalarFieldEnum = (typeof OrderItemScalarFieldEnum)[keyof typeof OrderItemScalarFieldEnum]
-
-
 export const OrderScalarFieldEnum = {
   id: 'id',
-  customer_id: 'customer_id',
-  warehouse_id: 'warehouse_id',
-  status: 'status',
-  total_amount: 'total_amount',
-  created_at: 'created_at',
-  updated_at: 'updated_at',
   customerId: 'customerId',
-  userId: 'userId'
+  warehouseId: 'warehouseId',
+  status: 'status',
+  totalAmount: 'totalAmount',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type OrderScalarFieldEnum = (typeof OrderScalarFieldEnum)[keyof typeof OrderScalarFieldEnum]
+
+
+export const OrderItemScalarFieldEnum = {
+  id: 'id',
+  orderId: 'orderId',
+  productId: 'productId',
+  quantity: 'quantity',
+  unitPrice: 'unitPrice',
+  createdAt: 'createdAt'
+} as const
+
+export type OrderItemScalarFieldEnum = (typeof OrderItemScalarFieldEnum)[keyof typeof OrderItemScalarFieldEnum]
 
 
 export const ProductScalarFieldEnum = {
@@ -119,23 +116,11 @@ export const ProductScalarFieldEnum = {
   sku: 'sku',
   name: 'name',
   price: 'price',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
-} as const
-
-export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
-
-
-export const UserScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  email: 'email',
-  password: 'password',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
-export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
 
 
 export const WarehouseScalarFieldEnum = {
@@ -143,8 +128,8 @@ export const WarehouseScalarFieldEnum = {
   name: 'name',
   latitude: 'latitude',
   longitude: 'longitude',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type WarehouseScalarFieldEnum = (typeof WarehouseScalarFieldEnum)[keyof typeof WarehouseScalarFieldEnum]
@@ -152,12 +137,9 @@ export type WarehouseScalarFieldEnum = (typeof WarehouseScalarFieldEnum)[keyof t
 
 export const WarehouseInventoryScalarFieldEnum = {
   id: 'id',
-  warehouse_id: 'warehouse_id',
-  product_id: 'product_id',
-  quantity: 'quantity',
-  version: 'version',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
+  warehouseId: 'warehouseId',
+  productId: 'productId',
+  quantity: 'quantity'
 } as const
 
 export type WarehouseInventoryScalarFieldEnum = (typeof WarehouseInventoryScalarFieldEnum)[keyof typeof WarehouseInventoryScalarFieldEnum]
@@ -177,12 +159,4 @@ export const QueryMode = {
 } as const
 
 export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
-
-
-export const NullsOrder = {
-  first: 'first',
-  last: 'last'
-} as const
-
-export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 

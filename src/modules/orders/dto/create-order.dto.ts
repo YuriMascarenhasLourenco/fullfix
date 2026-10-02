@@ -1,7 +1,15 @@
 export class CreateOrderDto {
   customerId!: number;
-  name!: string;
-  quantity!: number;
-  price!: number;
-  payment!: string;
+  warehouseId!: number;
+  shippingAddress!: {
+    latitude: number;
+    longitude: number;
+  };
+  item!: [
+    {
+      productId: number;
+      quantity: number;
+      unitPrice: number;
+    },
+  ];
 }

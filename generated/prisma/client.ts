@@ -40,37 +40,32 @@ export type PrismaClient<LogOpts extends Prisma.LogLevel = never, OmitOpts exten
 export { Prisma }
 
 /**
- * Model customer
+ * Model Customer
  * 
  */
-export type customer = Prisma.customerModel
+export type Customer = Prisma.CustomerModel
 /**
- * Model orderItem
+ * Model Order
  * 
  */
-export type orderItem = Prisma.orderItemModel
+export type Order = Prisma.OrderModel
 /**
- * Model order
+ * Model OrderItem
  * 
  */
-export type order = Prisma.orderModel
+export type OrderItem = Prisma.OrderItemModel
 /**
- * Model product
+ * Model Product
  * 
  */
-export type product = Prisma.productModel
+export type Product = Prisma.ProductModel
 /**
- * Model user
+ * Model Warehouse
  * 
  */
-export type user = Prisma.userModel
+export type Warehouse = Prisma.WarehouseModel
 /**
- * Model warehouse
+ * Model WarehouseInventory
  * 
  */
-export type warehouse = Prisma.warehouseModel
-/**
- * Model warehouseInventory
- * 
- */
-export type warehouseInventory = Prisma.warehouseInventoryModel
+export type WarehouseInventory = Prisma.WarehouseInventoryModel

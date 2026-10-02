@@ -1,28 +1,63 @@
 import { Injectable } from '@nestjs/common';
 import { CreateOrderDto } from './dto/create-order.dto';
-import { UpdateOrderDto } from './dto/update-order.dto';
 import { PrismaService } from 'src/database/prisma/prisma.service';
 
 @Injectable()
 export class OrdersService {
   constructor(private readonly prisma: PrismaService) {}
   async create(createOrderDto: CreateOrderDto) {
-    await this.prisma.warehouseInventory.findUnique({});
-  }
+    const validateCustomer = await this.prisma.customer.findUnique({
+      where: { id: createOrderDto.customerId },
+    });
 
-  findAll() {
-    return `This action returns all orders`;
-  }
+    if (!validateCustomer) {
+      throw new Error('Customer not found');
+    }
 
-  findOne(id: number) {
-    return `This action returns a #${id} order`;
-  }
+    for (const item of createOrderDto.item) {
+      const product = await this.prisma.product.findUnique({
+        where: { id: item.productId },
+      });
 
-  update(id: number, updateOrderDto: UpdateOrderDto) {
-    return `This action updates a #${id} order`;
+      if (!product) {
+        throw new Error(`Product ${item.productId} not found`);
+      }
+    }
+    const order = await this.prisma.order.create({
+      data: {
+        customerId: createOrderDto.customerId,
+        warehouseId: createOrderDto.warehouseId,
+        status: 'PENDING',
+        totalAmount: createOrderDto.item.reduce(
+          (acc, item) => acc + item.quantity * item.unitPrice,
+          0,
+        ),
+      },
+    });
+    const orderItems = await this.prisma.orderItem.createMany({
+      data: createOrderDto.item.map((item) => ({
+        orderId: Number(order.id),
+        productId: item.productId,
+        quantity: item.quantity,
+        unitPrice: item.unitPrice,
+      })),
+    });
+    const updateInventory = await this.prisma.product.updateMany({
+      where: {
+        id: { in: createOrderDto.item.map((item) => item.productId) },
+      },
+      data: {
+        quantity: {
+          decrement: createOrderDto.item.reduce(
+            (acc, item) => acc + item.quantity,
+            0,
+          ),
+        },
+      },
+    });
+    return { order, orderItems, updateInventory };
   }
-
-  remove(id: number) {
-    return `This action removes a #${id} order`;
+  async findAll() {
+    return await this.prisma.customer.findMany({});
   }
 }

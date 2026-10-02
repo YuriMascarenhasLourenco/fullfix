@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `warehouseInventory` model and its related types.
+ * This file exports the `WarehouseInventory` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model warehouseInventory
+ * Model WarehouseInventory
  * 
  */
-export type warehouseInventoryModel = runtime.Types.Result.DefaultSelection<Prisma.$warehouseInventoryPayload>
+export type WarehouseInventoryModel = runtime.Types.Result.DefaultSelection<Prisma.$WarehouseInventoryPayload>
 
 export type AggregateWarehouseInventory = {
   _count: WarehouseInventoryCountAggregateOutputType | null
@@ -28,132 +28,110 @@ export type AggregateWarehouseInventory = {
 
 export type WarehouseInventoryAvgAggregateOutputType = {
   id: number | null
-  warehouse_id: number | null
-  product_id: number | null
+  warehouseId: number | null
+  productId: number | null
   quantity: number | null
-  version: number | null
 }
 
 export type WarehouseInventorySumAggregateOutputType = {
   id: number | null
-  warehouse_id: number | null
-  product_id: number | null
+  warehouseId: number | null
+  productId: number | null
   quantity: number | null
-  version: number | null
 }
 
 export type WarehouseInventoryMinAggregateOutputType = {
   id: number | null
-  warehouse_id: number | null
-  product_id: number | null
+  warehouseId: number | null
+  productId: number | null
   quantity: number | null
-  version: number | null
-  created_at: Date | null
-  updated_at: Date | null
 }
 
 export type WarehouseInventoryMaxAggregateOutputType = {
   id: number | null
-  warehouse_id: number | null
-  product_id: number | null
+  warehouseId: number | null
+  productId: number | null
   quantity: number | null
-  version: number | null
-  created_at: Date | null
-  updated_at: Date | null
 }
 
 export type WarehouseInventoryCountAggregateOutputType = {
   id: number
-  warehouse_id: number
-  product_id: number
+  warehouseId: number
+  productId: number
   quantity: number
-  version: number
-  created_at: number
-  updated_at: number
   _all: number
 }
 
 
 export type WarehouseInventoryAvgAggregateInputType = {
   id?: true
-  warehouse_id?: true
-  product_id?: true
+  warehouseId?: true
+  productId?: true
   quantity?: true
-  version?: true
 }
 
 export type WarehouseInventorySumAggregateInputType = {
   id?: true
-  warehouse_id?: true
-  product_id?: true
+  warehouseId?: true
+  productId?: true
   quantity?: true
-  version?: true
 }
 
 export type WarehouseInventoryMinAggregateInputType = {
   id?: true
-  warehouse_id?: true
-  product_id?: true
+  warehouseId?: true
+  productId?: true
   quantity?: true
-  version?: true
-  created_at?: true
-  updated_at?: true
 }
 
 export type WarehouseInventoryMaxAggregateInputType = {
   id?: true
-  warehouse_id?: true
-  product_id?: true
+  warehouseId?: true
+  productId?: true
   quantity?: true
-  version?: true
-  created_at?: true
-  updated_at?: true
 }
 
 export type WarehouseInventoryCountAggregateInputType = {
   id?: true
-  warehouse_id?: true
-  product_id?: true
+  warehouseId?: true
+  productId?: true
   quantity?: true
-  version?: true
-  created_at?: true
-  updated_at?: true
   _all?: true
 }
 
 export type WarehouseInventoryAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which warehouseInventory to aggregate.
+   * Filter which WarehouseInventory to aggregate.
    */
-  where?: Prisma.warehouseInventoryWhereInput
+  where?: Prisma.WarehouseInventoryWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of warehouseInventories to fetch.
+   * Determine the order of WarehouseInventories to fetch.
    */
-  orderBy?: Prisma.warehouseInventoryOrderByWithRelationInput | Prisma.warehouseInventoryOrderByWithRelationInput[]
+  orderBy?: Prisma.WarehouseInventoryOrderByWithRelationInput | Prisma.WarehouseInventoryOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.warehouseInventoryWhereUniqueInput
+  cursor?: Prisma.WarehouseInventoryWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` warehouseInventories from the position of the cursor.
+   * Take `±n` WarehouseInventories from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` warehouseInventories.
+   * Skip the first `n` WarehouseInventories.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned warehouseInventories
+   * Count returned WarehouseInventories
   **/
   _count?: true | WarehouseInventoryCountAggregateInputType
   /**
@@ -193,11 +171,11 @@ export type GetWarehouseInventoryAggregateType<T extends WarehouseInventoryAggre
 
 
 
-export type warehouseInventoryGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.warehouseInventoryWhereInput
-  orderBy?: Prisma.warehouseInventoryOrderByWithAggregationInput | Prisma.warehouseInventoryOrderByWithAggregationInput[]
+export type WarehouseInventoryGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.WarehouseInventoryWhereInput
+  orderBy?: Prisma.WarehouseInventoryOrderByWithAggregationInput | Prisma.WarehouseInventoryOrderByWithAggregationInput[]
   by: Prisma.WarehouseInventoryScalarFieldEnum[] | Prisma.WarehouseInventoryScalarFieldEnum
-  having?: Prisma.warehouseInventoryScalarWhereWithAggregatesInput
+  having?: Prisma.WarehouseInventoryScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: WarehouseInventoryCountAggregateInputType | true
@@ -209,12 +187,9 @@ export type warehouseInventoryGroupByArgs<ExtArgs extends runtime.Types.Extensio
 
 export type WarehouseInventoryGroupByOutputType = {
   id: number
-  warehouse_id: number
-  product_id: number
+  warehouseId: number
+  productId: number
   quantity: number
-  version: number
-  created_at: Date
-  updated_at: Date
   _count: WarehouseInventoryCountAggregateOutputType | null
   _avg: WarehouseInventoryAvgAggregateOutputType | null
   _sum: WarehouseInventorySumAggregateOutputType | null
@@ -222,7 +197,7 @@ export type WarehouseInventoryGroupByOutputType = {
   _max: WarehouseInventoryMaxAggregateOutputType | null
 }
 
-export type GetWarehouseInventoryGroupByPayload<T extends warehouseInventoryGroupByArgs> = Prisma.PrismaPromise<
+export type GetWarehouseInventoryGroupByPayload<T extends WarehouseInventoryGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<WarehouseInventoryGroupByOutputType, T['by']> &
       {
@@ -237,448 +212,447 @@ export type GetWarehouseInventoryGroupByPayload<T extends warehouseInventoryGrou
 
 
 
-export type warehouseInventoryWhereInput = {
-  AND?: Prisma.warehouseInventoryWhereInput | Prisma.warehouseInventoryWhereInput[]
-  OR?: Prisma.warehouseInventoryWhereInput[]
-  NOT?: Prisma.warehouseInventoryWhereInput | Prisma.warehouseInventoryWhereInput[]
-  id?: Prisma.IntFilter<"warehouseInventory"> | number
-  warehouse_id?: Prisma.IntFilter<"warehouseInventory"> | number
-  product_id?: Prisma.IntFilter<"warehouseInventory"> | number
-  quantity?: Prisma.IntFilter<"warehouseInventory"> | number
-  version?: Prisma.IntFilter<"warehouseInventory"> | number
-  created_at?: Prisma.DateTimeFilter<"warehouseInventory"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"warehouseInventory"> | Date | string
-  warehouse?: Prisma.XOR<Prisma.WarehouseScalarRelationFilter, Prisma.warehouseWhereInput>
-  product?: Prisma.XOR<Prisma.ProductScalarRelationFilter, Prisma.productWhereInput>
+export type WarehouseInventoryWhereInput = {
+  AND?: Prisma.WarehouseInventoryWhereInput | Prisma.WarehouseInventoryWhereInput[]
+  OR?: Prisma.WarehouseInventoryWhereInput[]
+  NOT?: Prisma.WarehouseInventoryWhereInput | Prisma.WarehouseInventoryWhereInput[]
+  id?: Prisma.IntFilter<"WarehouseInventory"> | number
+  warehouseId?: Prisma.IntFilter<"WarehouseInventory"> | number
+  productId?: Prisma.IntFilter<"WarehouseInventory"> | number
+  quantity?: Prisma.IntFilter<"WarehouseInventory"> | number
+  warehouse?: Prisma.XOR<Prisma.WarehouseScalarRelationFilter, Prisma.WarehouseWhereInput>
+  product?: Prisma.XOR<Prisma.ProductScalarRelationFilter, Prisma.ProductWhereInput>
 }
 
-export type warehouseInventoryOrderByWithRelationInput = {
+export type WarehouseInventoryOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  warehouse_id?: Prisma.SortOrder
-  product_id?: Prisma.SortOrder
+  warehouseId?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
   quantity?: Prisma.SortOrder
-  version?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
-  warehouse?: Prisma.warehouseOrderByWithRelationInput
-  product?: Prisma.productOrderByWithRelationInput
+  warehouse?: Prisma.WarehouseOrderByWithRelationInput
+  product?: Prisma.ProductOrderByWithRelationInput
 }
 
-export type warehouseInventoryWhereUniqueInput = Prisma.AtLeast<{
+export type WarehouseInventoryWhereUniqueInput = Prisma.AtLeast<{
   id?: number
-  warehouse_id?: number
-  product_id?: number
-  AND?: Prisma.warehouseInventoryWhereInput | Prisma.warehouseInventoryWhereInput[]
-  OR?: Prisma.warehouseInventoryWhereInput[]
-  NOT?: Prisma.warehouseInventoryWhereInput | Prisma.warehouseInventoryWhereInput[]
-  quantity?: Prisma.IntFilter<"warehouseInventory"> | number
-  version?: Prisma.IntFilter<"warehouseInventory"> | number
-  created_at?: Prisma.DateTimeFilter<"warehouseInventory"> | Date | string
-  updated_at?: Prisma.DateTimeFilter<"warehouseInventory"> | Date | string
-  warehouse?: Prisma.XOR<Prisma.WarehouseScalarRelationFilter, Prisma.warehouseWhereInput>
-  product?: Prisma.XOR<Prisma.ProductScalarRelationFilter, Prisma.productWhereInput>
-}, "id" | "warehouse_id" | "product_id">
+  warehouseId_productId?: Prisma.WarehouseInventoryWarehouseIdProductIdCompoundUniqueInput
+  AND?: Prisma.WarehouseInventoryWhereInput | Prisma.WarehouseInventoryWhereInput[]
+  OR?: Prisma.WarehouseInventoryWhereInput[]
+  NOT?: Prisma.WarehouseInventoryWhereInput | Prisma.WarehouseInventoryWhereInput[]
+  warehouseId?: Prisma.IntFilter<"WarehouseInventory"> | number
+  productId?: Prisma.IntFilter<"WarehouseInventory"> | number
+  quantity?: Prisma.IntFilter<"WarehouseInventory"> | number
+  warehouse?: Prisma.XOR<Prisma.WarehouseScalarRelationFilter, Prisma.WarehouseWhereInput>
+  product?: Prisma.XOR<Prisma.ProductScalarRelationFilter, Prisma.ProductWhereInput>
+}, "id" | "warehouseId_productId">
 
-export type warehouseInventoryOrderByWithAggregationInput = {
+export type WarehouseInventoryOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  warehouse_id?: Prisma.SortOrder
-  product_id?: Prisma.SortOrder
+  warehouseId?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
   quantity?: Prisma.SortOrder
-  version?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
-  _count?: Prisma.warehouseInventoryCountOrderByAggregateInput
-  _avg?: Prisma.warehouseInventoryAvgOrderByAggregateInput
-  _max?: Prisma.warehouseInventoryMaxOrderByAggregateInput
-  _min?: Prisma.warehouseInventoryMinOrderByAggregateInput
-  _sum?: Prisma.warehouseInventorySumOrderByAggregateInput
+  _count?: Prisma.WarehouseInventoryCountOrderByAggregateInput
+  _avg?: Prisma.WarehouseInventoryAvgOrderByAggregateInput
+  _max?: Prisma.WarehouseInventoryMaxOrderByAggregateInput
+  _min?: Prisma.WarehouseInventoryMinOrderByAggregateInput
+  _sum?: Prisma.WarehouseInventorySumOrderByAggregateInput
 }
 
-export type warehouseInventoryScalarWhereWithAggregatesInput = {
-  AND?: Prisma.warehouseInventoryScalarWhereWithAggregatesInput | Prisma.warehouseInventoryScalarWhereWithAggregatesInput[]
-  OR?: Prisma.warehouseInventoryScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.warehouseInventoryScalarWhereWithAggregatesInput | Prisma.warehouseInventoryScalarWhereWithAggregatesInput[]
-  id?: Prisma.IntWithAggregatesFilter<"warehouseInventory"> | number
-  warehouse_id?: Prisma.IntWithAggregatesFilter<"warehouseInventory"> | number
-  product_id?: Prisma.IntWithAggregatesFilter<"warehouseInventory"> | number
-  quantity?: Prisma.IntWithAggregatesFilter<"warehouseInventory"> | number
-  version?: Prisma.IntWithAggregatesFilter<"warehouseInventory"> | number
-  created_at?: Prisma.DateTimeWithAggregatesFilter<"warehouseInventory"> | Date | string
-  updated_at?: Prisma.DateTimeWithAggregatesFilter<"warehouseInventory"> | Date | string
+export type WarehouseInventoryScalarWhereWithAggregatesInput = {
+  AND?: Prisma.WarehouseInventoryScalarWhereWithAggregatesInput | Prisma.WarehouseInventoryScalarWhereWithAggregatesInput[]
+  OR?: Prisma.WarehouseInventoryScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.WarehouseInventoryScalarWhereWithAggregatesInput | Prisma.WarehouseInventoryScalarWhereWithAggregatesInput[]
+  id?: Prisma.IntWithAggregatesFilter<"WarehouseInventory"> | number
+  warehouseId?: Prisma.IntWithAggregatesFilter<"WarehouseInventory"> | number
+  productId?: Prisma.IntWithAggregatesFilter<"WarehouseInventory"> | number
+  quantity?: Prisma.IntWithAggregatesFilter<"WarehouseInventory"> | number
 }
 
-export type warehouseInventoryCreateInput = {
-  quantity: number
-  version?: number
-  created_at?: Date | string
-  updated_at?: Date | string
-  warehouse: Prisma.warehouseCreateNestedOneWithoutWarehouseInventoryInput
-  product: Prisma.productCreateNestedOneWithoutWarehouseInventoryInput
+export type WarehouseInventoryCreateInput = {
+  quantity?: number
+  warehouse: Prisma.WarehouseCreateNestedOneWithoutInventoriesInput
+  product: Prisma.ProductCreateNestedOneWithoutWarehouseInventoriesInput
 }
 
-export type warehouseInventoryUncheckedCreateInput = {
+export type WarehouseInventoryUncheckedCreateInput = {
   id?: number
-  warehouse_id: number
-  product_id: number
-  quantity: number
-  version?: number
-  created_at?: Date | string
-  updated_at?: Date | string
+  warehouseId: number
+  productId: number
+  quantity?: number
 }
 
-export type warehouseInventoryUpdateInput = {
+export type WarehouseInventoryUpdateInput = {
   quantity?: Prisma.IntFieldUpdateOperationsInput | number
-  version?: Prisma.IntFieldUpdateOperationsInput | number
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  warehouse?: Prisma.warehouseUpdateOneRequiredWithoutWarehouseInventoryNestedInput
-  product?: Prisma.productUpdateOneRequiredWithoutWarehouseInventoryNestedInput
+  warehouse?: Prisma.WarehouseUpdateOneRequiredWithoutInventoriesNestedInput
+  product?: Prisma.ProductUpdateOneRequiredWithoutWarehouseInventoriesNestedInput
 }
 
-export type warehouseInventoryUncheckedUpdateInput = {
+export type WarehouseInventoryUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  warehouse_id?: Prisma.IntFieldUpdateOperationsInput | number
-  product_id?: Prisma.IntFieldUpdateOperationsInput | number
+  warehouseId?: Prisma.IntFieldUpdateOperationsInput | number
+  productId?: Prisma.IntFieldUpdateOperationsInput | number
   quantity?: Prisma.IntFieldUpdateOperationsInput | number
-  version?: Prisma.IntFieldUpdateOperationsInput | number
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type warehouseInventoryCreateManyInput = {
+export type WarehouseInventoryCreateManyInput = {
   id?: number
-  warehouse_id: number
-  product_id: number
-  quantity: number
-  version?: number
-  created_at?: Date | string
-  updated_at?: Date | string
+  warehouseId: number
+  productId: number
+  quantity?: number
 }
 
-export type warehouseInventoryUpdateManyMutationInput = {
+export type WarehouseInventoryUpdateManyMutationInput = {
   quantity?: Prisma.IntFieldUpdateOperationsInput | number
-  version?: Prisma.IntFieldUpdateOperationsInput | number
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type warehouseInventoryUncheckedUpdateManyInput = {
+export type WarehouseInventoryUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  warehouse_id?: Prisma.IntFieldUpdateOperationsInput | number
-  product_id?: Prisma.IntFieldUpdateOperationsInput | number
+  warehouseId?: Prisma.IntFieldUpdateOperationsInput | number
+  productId?: Prisma.IntFieldUpdateOperationsInput | number
   quantity?: Prisma.IntFieldUpdateOperationsInput | number
-  version?: Prisma.IntFieldUpdateOperationsInput | number
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type WarehouseInventoryNullableScalarRelationFilter = {
-  is?: Prisma.warehouseInventoryWhereInput | null
-  isNot?: Prisma.warehouseInventoryWhereInput | null
+export type WarehouseInventoryListRelationFilter = {
+  every?: Prisma.WarehouseInventoryWhereInput
+  some?: Prisma.WarehouseInventoryWhereInput
+  none?: Prisma.WarehouseInventoryWhereInput
 }
 
-export type warehouseInventoryCountOrderByAggregateInput = {
+export type WarehouseInventoryOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
+}
+
+export type WarehouseInventoryWarehouseIdProductIdCompoundUniqueInput = {
+  warehouseId: number
+  productId: number
+}
+
+export type WarehouseInventoryCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  warehouse_id?: Prisma.SortOrder
-  product_id?: Prisma.SortOrder
+  warehouseId?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
   quantity?: Prisma.SortOrder
-  version?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
 }
 
-export type warehouseInventoryAvgOrderByAggregateInput = {
+export type WarehouseInventoryAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  warehouse_id?: Prisma.SortOrder
-  product_id?: Prisma.SortOrder
+  warehouseId?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
   quantity?: Prisma.SortOrder
-  version?: Prisma.SortOrder
 }
 
-export type warehouseInventoryMaxOrderByAggregateInput = {
+export type WarehouseInventoryMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  warehouse_id?: Prisma.SortOrder
-  product_id?: Prisma.SortOrder
+  warehouseId?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
   quantity?: Prisma.SortOrder
-  version?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
 }
 
-export type warehouseInventoryMinOrderByAggregateInput = {
+export type WarehouseInventoryMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  warehouse_id?: Prisma.SortOrder
-  product_id?: Prisma.SortOrder
+  warehouseId?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
   quantity?: Prisma.SortOrder
-  version?: Prisma.SortOrder
-  created_at?: Prisma.SortOrder
-  updated_at?: Prisma.SortOrder
 }
 
-export type warehouseInventorySumOrderByAggregateInput = {
+export type WarehouseInventorySumOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  warehouse_id?: Prisma.SortOrder
-  product_id?: Prisma.SortOrder
+  warehouseId?: Prisma.SortOrder
+  productId?: Prisma.SortOrder
   quantity?: Prisma.SortOrder
-  version?: Prisma.SortOrder
 }
 
-export type warehouseInventoryCreateNestedOneWithoutProductInput = {
-  create?: Prisma.XOR<Prisma.warehouseInventoryCreateWithoutProductInput, Prisma.warehouseInventoryUncheckedCreateWithoutProductInput>
-  connectOrCreate?: Prisma.warehouseInventoryCreateOrConnectWithoutProductInput
-  connect?: Prisma.warehouseInventoryWhereUniqueInput
+export type WarehouseInventoryCreateNestedManyWithoutProductInput = {
+  create?: Prisma.XOR<Prisma.WarehouseInventoryCreateWithoutProductInput, Prisma.WarehouseInventoryUncheckedCreateWithoutProductInput> | Prisma.WarehouseInventoryCreateWithoutProductInput[] | Prisma.WarehouseInventoryUncheckedCreateWithoutProductInput[]
+  connectOrCreate?: Prisma.WarehouseInventoryCreateOrConnectWithoutProductInput | Prisma.WarehouseInventoryCreateOrConnectWithoutProductInput[]
+  createMany?: Prisma.WarehouseInventoryCreateManyProductInputEnvelope
+  connect?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
 }
 
-export type warehouseInventoryUncheckedCreateNestedOneWithoutProductInput = {
-  create?: Prisma.XOR<Prisma.warehouseInventoryCreateWithoutProductInput, Prisma.warehouseInventoryUncheckedCreateWithoutProductInput>
-  connectOrCreate?: Prisma.warehouseInventoryCreateOrConnectWithoutProductInput
-  connect?: Prisma.warehouseInventoryWhereUniqueInput
+export type WarehouseInventoryUncheckedCreateNestedManyWithoutProductInput = {
+  create?: Prisma.XOR<Prisma.WarehouseInventoryCreateWithoutProductInput, Prisma.WarehouseInventoryUncheckedCreateWithoutProductInput> | Prisma.WarehouseInventoryCreateWithoutProductInput[] | Prisma.WarehouseInventoryUncheckedCreateWithoutProductInput[]
+  connectOrCreate?: Prisma.WarehouseInventoryCreateOrConnectWithoutProductInput | Prisma.WarehouseInventoryCreateOrConnectWithoutProductInput[]
+  createMany?: Prisma.WarehouseInventoryCreateManyProductInputEnvelope
+  connect?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
 }
 
-export type warehouseInventoryUpdateOneWithoutProductNestedInput = {
-  create?: Prisma.XOR<Prisma.warehouseInventoryCreateWithoutProductInput, Prisma.warehouseInventoryUncheckedCreateWithoutProductInput>
-  connectOrCreate?: Prisma.warehouseInventoryCreateOrConnectWithoutProductInput
-  upsert?: Prisma.warehouseInventoryUpsertWithoutProductInput
-  disconnect?: Prisma.warehouseInventoryWhereInput | boolean
-  delete?: Prisma.warehouseInventoryWhereInput | boolean
-  connect?: Prisma.warehouseInventoryWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.warehouseInventoryUpdateToOneWithWhereWithoutProductInput, Prisma.warehouseInventoryUpdateWithoutProductInput>, Prisma.warehouseInventoryUncheckedUpdateWithoutProductInput>
+export type WarehouseInventoryUpdateManyWithoutProductNestedInput = {
+  create?: Prisma.XOR<Prisma.WarehouseInventoryCreateWithoutProductInput, Prisma.WarehouseInventoryUncheckedCreateWithoutProductInput> | Prisma.WarehouseInventoryCreateWithoutProductInput[] | Prisma.WarehouseInventoryUncheckedCreateWithoutProductInput[]
+  connectOrCreate?: Prisma.WarehouseInventoryCreateOrConnectWithoutProductInput | Prisma.WarehouseInventoryCreateOrConnectWithoutProductInput[]
+  upsert?: Prisma.WarehouseInventoryUpsertWithWhereUniqueWithoutProductInput | Prisma.WarehouseInventoryUpsertWithWhereUniqueWithoutProductInput[]
+  createMany?: Prisma.WarehouseInventoryCreateManyProductInputEnvelope
+  set?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
+  disconnect?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
+  delete?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
+  connect?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
+  update?: Prisma.WarehouseInventoryUpdateWithWhereUniqueWithoutProductInput | Prisma.WarehouseInventoryUpdateWithWhereUniqueWithoutProductInput[]
+  updateMany?: Prisma.WarehouseInventoryUpdateManyWithWhereWithoutProductInput | Prisma.WarehouseInventoryUpdateManyWithWhereWithoutProductInput[]
+  deleteMany?: Prisma.WarehouseInventoryScalarWhereInput | Prisma.WarehouseInventoryScalarWhereInput[]
 }
 
-export type warehouseInventoryUncheckedUpdateOneWithoutProductNestedInput = {
-  create?: Prisma.XOR<Prisma.warehouseInventoryCreateWithoutProductInput, Prisma.warehouseInventoryUncheckedCreateWithoutProductInput>
-  connectOrCreate?: Prisma.warehouseInventoryCreateOrConnectWithoutProductInput
-  upsert?: Prisma.warehouseInventoryUpsertWithoutProductInput
-  disconnect?: Prisma.warehouseInventoryWhereInput | boolean
-  delete?: Prisma.warehouseInventoryWhereInput | boolean
-  connect?: Prisma.warehouseInventoryWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.warehouseInventoryUpdateToOneWithWhereWithoutProductInput, Prisma.warehouseInventoryUpdateWithoutProductInput>, Prisma.warehouseInventoryUncheckedUpdateWithoutProductInput>
+export type WarehouseInventoryUncheckedUpdateManyWithoutProductNestedInput = {
+  create?: Prisma.XOR<Prisma.WarehouseInventoryCreateWithoutProductInput, Prisma.WarehouseInventoryUncheckedCreateWithoutProductInput> | Prisma.WarehouseInventoryCreateWithoutProductInput[] | Prisma.WarehouseInventoryUncheckedCreateWithoutProductInput[]
+  connectOrCreate?: Prisma.WarehouseInventoryCreateOrConnectWithoutProductInput | Prisma.WarehouseInventoryCreateOrConnectWithoutProductInput[]
+  upsert?: Prisma.WarehouseInventoryUpsertWithWhereUniqueWithoutProductInput | Prisma.WarehouseInventoryUpsertWithWhereUniqueWithoutProductInput[]
+  createMany?: Prisma.WarehouseInventoryCreateManyProductInputEnvelope
+  set?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
+  disconnect?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
+  delete?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
+  connect?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
+  update?: Prisma.WarehouseInventoryUpdateWithWhereUniqueWithoutProductInput | Prisma.WarehouseInventoryUpdateWithWhereUniqueWithoutProductInput[]
+  updateMany?: Prisma.WarehouseInventoryUpdateManyWithWhereWithoutProductInput | Prisma.WarehouseInventoryUpdateManyWithWhereWithoutProductInput[]
+  deleteMany?: Prisma.WarehouseInventoryScalarWhereInput | Prisma.WarehouseInventoryScalarWhereInput[]
 }
 
-export type warehouseInventoryCreateNestedOneWithoutWarehouseInput = {
-  create?: Prisma.XOR<Prisma.warehouseInventoryCreateWithoutWarehouseInput, Prisma.warehouseInventoryUncheckedCreateWithoutWarehouseInput>
-  connectOrCreate?: Prisma.warehouseInventoryCreateOrConnectWithoutWarehouseInput
-  connect?: Prisma.warehouseInventoryWhereUniqueInput
+export type WarehouseInventoryCreateNestedManyWithoutWarehouseInput = {
+  create?: Prisma.XOR<Prisma.WarehouseInventoryCreateWithoutWarehouseInput, Prisma.WarehouseInventoryUncheckedCreateWithoutWarehouseInput> | Prisma.WarehouseInventoryCreateWithoutWarehouseInput[] | Prisma.WarehouseInventoryUncheckedCreateWithoutWarehouseInput[]
+  connectOrCreate?: Prisma.WarehouseInventoryCreateOrConnectWithoutWarehouseInput | Prisma.WarehouseInventoryCreateOrConnectWithoutWarehouseInput[]
+  createMany?: Prisma.WarehouseInventoryCreateManyWarehouseInputEnvelope
+  connect?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
 }
 
-export type warehouseInventoryUncheckedCreateNestedOneWithoutWarehouseInput = {
-  create?: Prisma.XOR<Prisma.warehouseInventoryCreateWithoutWarehouseInput, Prisma.warehouseInventoryUncheckedCreateWithoutWarehouseInput>
-  connectOrCreate?: Prisma.warehouseInventoryCreateOrConnectWithoutWarehouseInput
-  connect?: Prisma.warehouseInventoryWhereUniqueInput
+export type WarehouseInventoryUncheckedCreateNestedManyWithoutWarehouseInput = {
+  create?: Prisma.XOR<Prisma.WarehouseInventoryCreateWithoutWarehouseInput, Prisma.WarehouseInventoryUncheckedCreateWithoutWarehouseInput> | Prisma.WarehouseInventoryCreateWithoutWarehouseInput[] | Prisma.WarehouseInventoryUncheckedCreateWithoutWarehouseInput[]
+  connectOrCreate?: Prisma.WarehouseInventoryCreateOrConnectWithoutWarehouseInput | Prisma.WarehouseInventoryCreateOrConnectWithoutWarehouseInput[]
+  createMany?: Prisma.WarehouseInventoryCreateManyWarehouseInputEnvelope
+  connect?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
 }
 
-export type warehouseInventoryUpdateOneWithoutWarehouseNestedInput = {
-  create?: Prisma.XOR<Prisma.warehouseInventoryCreateWithoutWarehouseInput, Prisma.warehouseInventoryUncheckedCreateWithoutWarehouseInput>
-  connectOrCreate?: Prisma.warehouseInventoryCreateOrConnectWithoutWarehouseInput
-  upsert?: Prisma.warehouseInventoryUpsertWithoutWarehouseInput
-  disconnect?: Prisma.warehouseInventoryWhereInput | boolean
-  delete?: Prisma.warehouseInventoryWhereInput | boolean
-  connect?: Prisma.warehouseInventoryWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.warehouseInventoryUpdateToOneWithWhereWithoutWarehouseInput, Prisma.warehouseInventoryUpdateWithoutWarehouseInput>, Prisma.warehouseInventoryUncheckedUpdateWithoutWarehouseInput>
+export type WarehouseInventoryUpdateManyWithoutWarehouseNestedInput = {
+  create?: Prisma.XOR<Prisma.WarehouseInventoryCreateWithoutWarehouseInput, Prisma.WarehouseInventoryUncheckedCreateWithoutWarehouseInput> | Prisma.WarehouseInventoryCreateWithoutWarehouseInput[] | Prisma.WarehouseInventoryUncheckedCreateWithoutWarehouseInput[]
+  connectOrCreate?: Prisma.WarehouseInventoryCreateOrConnectWithoutWarehouseInput | Prisma.WarehouseInventoryCreateOrConnectWithoutWarehouseInput[]
+  upsert?: Prisma.WarehouseInventoryUpsertWithWhereUniqueWithoutWarehouseInput | Prisma.WarehouseInventoryUpsertWithWhereUniqueWithoutWarehouseInput[]
+  createMany?: Prisma.WarehouseInventoryCreateManyWarehouseInputEnvelope
+  set?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
+  disconnect?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
+  delete?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
+  connect?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
+  update?: Prisma.WarehouseInventoryUpdateWithWhereUniqueWithoutWarehouseInput | Prisma.WarehouseInventoryUpdateWithWhereUniqueWithoutWarehouseInput[]
+  updateMany?: Prisma.WarehouseInventoryUpdateManyWithWhereWithoutWarehouseInput | Prisma.WarehouseInventoryUpdateManyWithWhereWithoutWarehouseInput[]
+  deleteMany?: Prisma.WarehouseInventoryScalarWhereInput | Prisma.WarehouseInventoryScalarWhereInput[]
 }
 
-export type warehouseInventoryUncheckedUpdateOneWithoutWarehouseNestedInput = {
-  create?: Prisma.XOR<Prisma.warehouseInventoryCreateWithoutWarehouseInput, Prisma.warehouseInventoryUncheckedCreateWithoutWarehouseInput>
-  connectOrCreate?: Prisma.warehouseInventoryCreateOrConnectWithoutWarehouseInput
-  upsert?: Prisma.warehouseInventoryUpsertWithoutWarehouseInput
-  disconnect?: Prisma.warehouseInventoryWhereInput | boolean
-  delete?: Prisma.warehouseInventoryWhereInput | boolean
-  connect?: Prisma.warehouseInventoryWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.warehouseInventoryUpdateToOneWithWhereWithoutWarehouseInput, Prisma.warehouseInventoryUpdateWithoutWarehouseInput>, Prisma.warehouseInventoryUncheckedUpdateWithoutWarehouseInput>
+export type WarehouseInventoryUncheckedUpdateManyWithoutWarehouseNestedInput = {
+  create?: Prisma.XOR<Prisma.WarehouseInventoryCreateWithoutWarehouseInput, Prisma.WarehouseInventoryUncheckedCreateWithoutWarehouseInput> | Prisma.WarehouseInventoryCreateWithoutWarehouseInput[] | Prisma.WarehouseInventoryUncheckedCreateWithoutWarehouseInput[]
+  connectOrCreate?: Prisma.WarehouseInventoryCreateOrConnectWithoutWarehouseInput | Prisma.WarehouseInventoryCreateOrConnectWithoutWarehouseInput[]
+  upsert?: Prisma.WarehouseInventoryUpsertWithWhereUniqueWithoutWarehouseInput | Prisma.WarehouseInventoryUpsertWithWhereUniqueWithoutWarehouseInput[]
+  createMany?: Prisma.WarehouseInventoryCreateManyWarehouseInputEnvelope
+  set?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
+  disconnect?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
+  delete?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
+  connect?: Prisma.WarehouseInventoryWhereUniqueInput | Prisma.WarehouseInventoryWhereUniqueInput[]
+  update?: Prisma.WarehouseInventoryUpdateWithWhereUniqueWithoutWarehouseInput | Prisma.WarehouseInventoryUpdateWithWhereUniqueWithoutWarehouseInput[]
+  updateMany?: Prisma.WarehouseInventoryUpdateManyWithWhereWithoutWarehouseInput | Prisma.WarehouseInventoryUpdateManyWithWhereWithoutWarehouseInput[]
+  deleteMany?: Prisma.WarehouseInventoryScalarWhereInput | Prisma.WarehouseInventoryScalarWhereInput[]
 }
 
-export type warehouseInventoryCreateWithoutProductInput = {
-  quantity: number
-  version?: number
-  created_at?: Date | string
-  updated_at?: Date | string
-  warehouse: Prisma.warehouseCreateNestedOneWithoutWarehouseInventoryInput
+export type WarehouseInventoryCreateWithoutProductInput = {
+  quantity?: number
+  warehouse: Prisma.WarehouseCreateNestedOneWithoutInventoriesInput
 }
 
-export type warehouseInventoryUncheckedCreateWithoutProductInput = {
+export type WarehouseInventoryUncheckedCreateWithoutProductInput = {
   id?: number
-  warehouse_id: number
-  quantity: number
-  version?: number
-  created_at?: Date | string
-  updated_at?: Date | string
+  warehouseId: number
+  quantity?: number
 }
 
-export type warehouseInventoryCreateOrConnectWithoutProductInput = {
-  where: Prisma.warehouseInventoryWhereUniqueInput
-  create: Prisma.XOR<Prisma.warehouseInventoryCreateWithoutProductInput, Prisma.warehouseInventoryUncheckedCreateWithoutProductInput>
+export type WarehouseInventoryCreateOrConnectWithoutProductInput = {
+  where: Prisma.WarehouseInventoryWhereUniqueInput
+  create: Prisma.XOR<Prisma.WarehouseInventoryCreateWithoutProductInput, Prisma.WarehouseInventoryUncheckedCreateWithoutProductInput>
 }
 
-export type warehouseInventoryUpsertWithoutProductInput = {
-  update: Prisma.XOR<Prisma.warehouseInventoryUpdateWithoutProductInput, Prisma.warehouseInventoryUncheckedUpdateWithoutProductInput>
-  create: Prisma.XOR<Prisma.warehouseInventoryCreateWithoutProductInput, Prisma.warehouseInventoryUncheckedCreateWithoutProductInput>
-  where?: Prisma.warehouseInventoryWhereInput
+export type WarehouseInventoryCreateManyProductInputEnvelope = {
+  data: Prisma.WarehouseInventoryCreateManyProductInput | Prisma.WarehouseInventoryCreateManyProductInput[]
+  skipDuplicates?: boolean
 }
 
-export type warehouseInventoryUpdateToOneWithWhereWithoutProductInput = {
-  where?: Prisma.warehouseInventoryWhereInput
-  data: Prisma.XOR<Prisma.warehouseInventoryUpdateWithoutProductInput, Prisma.warehouseInventoryUncheckedUpdateWithoutProductInput>
+export type WarehouseInventoryUpsertWithWhereUniqueWithoutProductInput = {
+  where: Prisma.WarehouseInventoryWhereUniqueInput
+  update: Prisma.XOR<Prisma.WarehouseInventoryUpdateWithoutProductInput, Prisma.WarehouseInventoryUncheckedUpdateWithoutProductInput>
+  create: Prisma.XOR<Prisma.WarehouseInventoryCreateWithoutProductInput, Prisma.WarehouseInventoryUncheckedCreateWithoutProductInput>
 }
 
-export type warehouseInventoryUpdateWithoutProductInput = {
-  quantity?: Prisma.IntFieldUpdateOperationsInput | number
-  version?: Prisma.IntFieldUpdateOperationsInput | number
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  warehouse?: Prisma.warehouseUpdateOneRequiredWithoutWarehouseInventoryNestedInput
+export type WarehouseInventoryUpdateWithWhereUniqueWithoutProductInput = {
+  where: Prisma.WarehouseInventoryWhereUniqueInput
+  data: Prisma.XOR<Prisma.WarehouseInventoryUpdateWithoutProductInput, Prisma.WarehouseInventoryUncheckedUpdateWithoutProductInput>
 }
 
-export type warehouseInventoryUncheckedUpdateWithoutProductInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
-  warehouse_id?: Prisma.IntFieldUpdateOperationsInput | number
-  quantity?: Prisma.IntFieldUpdateOperationsInput | number
-  version?: Prisma.IntFieldUpdateOperationsInput | number
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+export type WarehouseInventoryUpdateManyWithWhereWithoutProductInput = {
+  where: Prisma.WarehouseInventoryScalarWhereInput
+  data: Prisma.XOR<Prisma.WarehouseInventoryUpdateManyMutationInput, Prisma.WarehouseInventoryUncheckedUpdateManyWithoutProductInput>
 }
 
-export type warehouseInventoryCreateWithoutWarehouseInput = {
-  quantity: number
-  version?: number
-  created_at?: Date | string
-  updated_at?: Date | string
-  product: Prisma.productCreateNestedOneWithoutWarehouseInventoryInput
+export type WarehouseInventoryScalarWhereInput = {
+  AND?: Prisma.WarehouseInventoryScalarWhereInput | Prisma.WarehouseInventoryScalarWhereInput[]
+  OR?: Prisma.WarehouseInventoryScalarWhereInput[]
+  NOT?: Prisma.WarehouseInventoryScalarWhereInput | Prisma.WarehouseInventoryScalarWhereInput[]
+  id?: Prisma.IntFilter<"WarehouseInventory"> | number
+  warehouseId?: Prisma.IntFilter<"WarehouseInventory"> | number
+  productId?: Prisma.IntFilter<"WarehouseInventory"> | number
+  quantity?: Prisma.IntFilter<"WarehouseInventory"> | number
 }
 
-export type warehouseInventoryUncheckedCreateWithoutWarehouseInput = {
+export type WarehouseInventoryCreateWithoutWarehouseInput = {
+  quantity?: number
+  product: Prisma.ProductCreateNestedOneWithoutWarehouseInventoriesInput
+}
+
+export type WarehouseInventoryUncheckedCreateWithoutWarehouseInput = {
   id?: number
-  product_id: number
-  quantity: number
-  version?: number
-  created_at?: Date | string
-  updated_at?: Date | string
+  productId: number
+  quantity?: number
 }
 
-export type warehouseInventoryCreateOrConnectWithoutWarehouseInput = {
-  where: Prisma.warehouseInventoryWhereUniqueInput
-  create: Prisma.XOR<Prisma.warehouseInventoryCreateWithoutWarehouseInput, Prisma.warehouseInventoryUncheckedCreateWithoutWarehouseInput>
+export type WarehouseInventoryCreateOrConnectWithoutWarehouseInput = {
+  where: Prisma.WarehouseInventoryWhereUniqueInput
+  create: Prisma.XOR<Prisma.WarehouseInventoryCreateWithoutWarehouseInput, Prisma.WarehouseInventoryUncheckedCreateWithoutWarehouseInput>
 }
 
-export type warehouseInventoryUpsertWithoutWarehouseInput = {
-  update: Prisma.XOR<Prisma.warehouseInventoryUpdateWithoutWarehouseInput, Prisma.warehouseInventoryUncheckedUpdateWithoutWarehouseInput>
-  create: Prisma.XOR<Prisma.warehouseInventoryCreateWithoutWarehouseInput, Prisma.warehouseInventoryUncheckedCreateWithoutWarehouseInput>
-  where?: Prisma.warehouseInventoryWhereInput
+export type WarehouseInventoryCreateManyWarehouseInputEnvelope = {
+  data: Prisma.WarehouseInventoryCreateManyWarehouseInput | Prisma.WarehouseInventoryCreateManyWarehouseInput[]
+  skipDuplicates?: boolean
 }
 
-export type warehouseInventoryUpdateToOneWithWhereWithoutWarehouseInput = {
-  where?: Prisma.warehouseInventoryWhereInput
-  data: Prisma.XOR<Prisma.warehouseInventoryUpdateWithoutWarehouseInput, Prisma.warehouseInventoryUncheckedUpdateWithoutWarehouseInput>
+export type WarehouseInventoryUpsertWithWhereUniqueWithoutWarehouseInput = {
+  where: Prisma.WarehouseInventoryWhereUniqueInput
+  update: Prisma.XOR<Prisma.WarehouseInventoryUpdateWithoutWarehouseInput, Prisma.WarehouseInventoryUncheckedUpdateWithoutWarehouseInput>
+  create: Prisma.XOR<Prisma.WarehouseInventoryCreateWithoutWarehouseInput, Prisma.WarehouseInventoryUncheckedCreateWithoutWarehouseInput>
 }
 
-export type warehouseInventoryUpdateWithoutWarehouseInput = {
+export type WarehouseInventoryUpdateWithWhereUniqueWithoutWarehouseInput = {
+  where: Prisma.WarehouseInventoryWhereUniqueInput
+  data: Prisma.XOR<Prisma.WarehouseInventoryUpdateWithoutWarehouseInput, Prisma.WarehouseInventoryUncheckedUpdateWithoutWarehouseInput>
+}
+
+export type WarehouseInventoryUpdateManyWithWhereWithoutWarehouseInput = {
+  where: Prisma.WarehouseInventoryScalarWhereInput
+  data: Prisma.XOR<Prisma.WarehouseInventoryUpdateManyMutationInput, Prisma.WarehouseInventoryUncheckedUpdateManyWithoutWarehouseInput>
+}
+
+export type WarehouseInventoryCreateManyProductInput = {
+  id?: number
+  warehouseId: number
+  quantity?: number
+}
+
+export type WarehouseInventoryUpdateWithoutProductInput = {
   quantity?: Prisma.IntFieldUpdateOperationsInput | number
-  version?: Prisma.IntFieldUpdateOperationsInput | number
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  product?: Prisma.productUpdateOneRequiredWithoutWarehouseInventoryNestedInput
+  warehouse?: Prisma.WarehouseUpdateOneRequiredWithoutInventoriesNestedInput
 }
 
-export type warehouseInventoryUncheckedUpdateWithoutWarehouseInput = {
+export type WarehouseInventoryUncheckedUpdateWithoutProductInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  product_id?: Prisma.IntFieldUpdateOperationsInput | number
+  warehouseId?: Prisma.IntFieldUpdateOperationsInput | number
   quantity?: Prisma.IntFieldUpdateOperationsInput | number
-  version?: Prisma.IntFieldUpdateOperationsInput | number
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type WarehouseInventoryUncheckedUpdateManyWithoutProductInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  warehouseId?: Prisma.IntFieldUpdateOperationsInput | number
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+}
+
+export type WarehouseInventoryCreateManyWarehouseInput = {
+  id?: number
+  productId: number
+  quantity?: number
+}
+
+export type WarehouseInventoryUpdateWithoutWarehouseInput = {
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+  product?: Prisma.ProductUpdateOneRequiredWithoutWarehouseInventoriesNestedInput
+}
+
+export type WarehouseInventoryUncheckedUpdateWithoutWarehouseInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  productId?: Prisma.IntFieldUpdateOperationsInput | number
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
+}
+
+export type WarehouseInventoryUncheckedUpdateManyWithoutWarehouseInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  productId?: Prisma.IntFieldUpdateOperationsInput | number
+  quantity?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 
 
-export type warehouseInventorySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type WarehouseInventorySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  warehouse_id?: boolean
-  product_id?: boolean
+  warehouseId?: boolean
+  productId?: boolean
   quantity?: boolean
-  version?: boolean
-  created_at?: boolean
-  updated_at?: boolean
-  warehouse?: boolean | Prisma.warehouseDefaultArgs<ExtArgs>
-  product?: boolean | Prisma.productDefaultArgs<ExtArgs>
+  warehouse?: boolean | Prisma.WarehouseDefaultArgs<ExtArgs>
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["warehouseInventory"]>
 
-export type warehouseInventorySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type WarehouseInventorySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  warehouse_id?: boolean
-  product_id?: boolean
+  warehouseId?: boolean
+  productId?: boolean
   quantity?: boolean
-  version?: boolean
-  created_at?: boolean
-  updated_at?: boolean
-  warehouse?: boolean | Prisma.warehouseDefaultArgs<ExtArgs>
-  product?: boolean | Prisma.productDefaultArgs<ExtArgs>
+  warehouse?: boolean | Prisma.WarehouseDefaultArgs<ExtArgs>
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["warehouseInventory"]>
 
-export type warehouseInventorySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type WarehouseInventorySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  warehouse_id?: boolean
-  product_id?: boolean
+  warehouseId?: boolean
+  productId?: boolean
   quantity?: boolean
-  version?: boolean
-  created_at?: boolean
-  updated_at?: boolean
-  warehouse?: boolean | Prisma.warehouseDefaultArgs<ExtArgs>
-  product?: boolean | Prisma.productDefaultArgs<ExtArgs>
+  warehouse?: boolean | Prisma.WarehouseDefaultArgs<ExtArgs>
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["warehouseInventory"]>
 
-export type warehouseInventorySelectScalar = {
+export type WarehouseInventorySelectScalar = {
   id?: boolean
-  warehouse_id?: boolean
-  product_id?: boolean
+  warehouseId?: boolean
+  productId?: boolean
   quantity?: boolean
-  version?: boolean
-  created_at?: boolean
-  updated_at?: boolean
 }
 
-export type warehouseInventoryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "warehouse_id" | "product_id" | "quantity" | "version" | "created_at" | "updated_at", ExtArgs["result"]["warehouseInventory"]>
-export type warehouseInventoryInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  warehouse?: boolean | Prisma.warehouseDefaultArgs<ExtArgs>
-  product?: boolean | Prisma.productDefaultArgs<ExtArgs>
+export type WarehouseInventoryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "warehouseId" | "productId" | "quantity", ExtArgs["result"]["warehouseInventory"]>
+export type WarehouseInventoryInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  warehouse?: boolean | Prisma.WarehouseDefaultArgs<ExtArgs>
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
 }
-export type warehouseInventoryIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  warehouse?: boolean | Prisma.warehouseDefaultArgs<ExtArgs>
-  product?: boolean | Prisma.productDefaultArgs<ExtArgs>
+export type WarehouseInventoryIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  warehouse?: boolean | Prisma.WarehouseDefaultArgs<ExtArgs>
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
 }
-export type warehouseInventoryIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  warehouse?: boolean | Prisma.warehouseDefaultArgs<ExtArgs>
-  product?: boolean | Prisma.productDefaultArgs<ExtArgs>
+export type WarehouseInventoryIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  warehouse?: boolean | Prisma.WarehouseDefaultArgs<ExtArgs>
+  product?: boolean | Prisma.ProductDefaultArgs<ExtArgs>
 }
 
-export type $warehouseInventoryPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "warehouseInventory"
+export type $WarehouseInventoryPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "WarehouseInventory"
   objects: {
-    warehouse: Prisma.$warehousePayload<ExtArgs>
-    product: Prisma.$productPayload<ExtArgs>
+    warehouse: Prisma.$WarehousePayload<ExtArgs>
+    product: Prisma.$ProductPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
-    warehouse_id: number
-    product_id: number
+    warehouseId: number
+    productId: number
     quantity: number
-    version: number
-    created_at: Date
-    updated_at: Date
   }, ExtArgs["result"]["warehouseInventory"]>
   composites: {}
 }
 
-export type warehouseInventoryGetPayload<S extends boolean | null | undefined | warehouseInventoryDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$warehouseInventoryPayload, S>
+export type WarehouseInventoryGetPayload<S extends boolean | null | undefined | WarehouseInventoryDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$WarehouseInventoryPayload, S>
 
-export type warehouseInventoryCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<warehouseInventoryFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type WarehouseInventoryCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<WarehouseInventoryFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: WarehouseInventoryCountAggregateInputType | true
   }
 
-export interface warehouseInventoryDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['warehouseInventory'], meta: { name: 'warehouseInventory' } }
+export interface WarehouseInventoryDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['WarehouseInventory'], meta: { name: 'WarehouseInventory' } }
   /**
    * Find zero or one WarehouseInventory that matches the filter.
-   * @param {warehouseInventoryFindUniqueArgs} args - Arguments to find a WarehouseInventory
+   * @param {WarehouseInventoryFindUniqueArgs} args - Arguments to find a WarehouseInventory
    * @example
    * // Get one WarehouseInventory
    * const warehouseInventory = await prisma.warehouseInventory.findUnique({
@@ -687,12 +661,12 @@ export interface warehouseInventoryDelegate<ExtArgs extends runtime.Types.Extens
    *   }
    * })
    */
-  findUnique<T extends warehouseInventoryFindUniqueArgs>(args: Prisma.SelectSubset<T, warehouseInventoryFindUniqueArgs<ExtArgs>>): Prisma.Prisma__warehouseInventoryClient<runtime.Types.Result.GetResult<Prisma.$warehouseInventoryPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends WarehouseInventoryFindUniqueArgs>(args: Prisma.SelectSubset<T, WarehouseInventoryFindUniqueArgs<ExtArgs>>): Prisma.Prisma__WarehouseInventoryClient<runtime.Types.Result.GetResult<Prisma.$WarehouseInventoryPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one WarehouseInventory that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {warehouseInventoryFindUniqueOrThrowArgs} args - Arguments to find a WarehouseInventory
+   * @param {WarehouseInventoryFindUniqueOrThrowArgs} args - Arguments to find a WarehouseInventory
    * @example
    * // Get one WarehouseInventory
    * const warehouseInventory = await prisma.warehouseInventory.findUniqueOrThrow({
@@ -701,13 +675,13 @@ export interface warehouseInventoryDelegate<ExtArgs extends runtime.Types.Extens
    *   }
    * })
    */
-  findUniqueOrThrow<T extends warehouseInventoryFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, warehouseInventoryFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__warehouseInventoryClient<runtime.Types.Result.GetResult<Prisma.$warehouseInventoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends WarehouseInventoryFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, WarehouseInventoryFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__WarehouseInventoryClient<runtime.Types.Result.GetResult<Prisma.$WarehouseInventoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first WarehouseInventory that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {warehouseInventoryFindFirstArgs} args - Arguments to find a WarehouseInventory
+   * @param {WarehouseInventoryFindFirstArgs} args - Arguments to find a WarehouseInventory
    * @example
    * // Get one WarehouseInventory
    * const warehouseInventory = await prisma.warehouseInventory.findFirst({
@@ -716,14 +690,14 @@ export interface warehouseInventoryDelegate<ExtArgs extends runtime.Types.Extens
    *   }
    * })
    */
-  findFirst<T extends warehouseInventoryFindFirstArgs>(args?: Prisma.SelectSubset<T, warehouseInventoryFindFirstArgs<ExtArgs>>): Prisma.Prisma__warehouseInventoryClient<runtime.Types.Result.GetResult<Prisma.$warehouseInventoryPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends WarehouseInventoryFindFirstArgs>(args?: Prisma.SelectSubset<T, WarehouseInventoryFindFirstArgs<ExtArgs>>): Prisma.Prisma__WarehouseInventoryClient<runtime.Types.Result.GetResult<Prisma.$WarehouseInventoryPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first WarehouseInventory that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {warehouseInventoryFindFirstOrThrowArgs} args - Arguments to find a WarehouseInventory
+   * @param {WarehouseInventoryFindFirstOrThrowArgs} args - Arguments to find a WarehouseInventory
    * @example
    * // Get one WarehouseInventory
    * const warehouseInventory = await prisma.warehouseInventory.findFirstOrThrow({
@@ -732,13 +706,13 @@ export interface warehouseInventoryDelegate<ExtArgs extends runtime.Types.Extens
    *   }
    * })
    */
-  findFirstOrThrow<T extends warehouseInventoryFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, warehouseInventoryFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__warehouseInventoryClient<runtime.Types.Result.GetResult<Prisma.$warehouseInventoryPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends WarehouseInventoryFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, WarehouseInventoryFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__WarehouseInventoryClient<runtime.Types.Result.GetResult<Prisma.$WarehouseInventoryPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more WarehouseInventories that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {warehouseInventoryFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {WarehouseInventoryFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all WarehouseInventories
    * const warehouseInventories = await prisma.warehouseInventory.findMany()
@@ -750,11 +724,11 @@ export interface warehouseInventoryDelegate<ExtArgs extends runtime.Types.Extens
    * const warehouseInventoryWithIdOnly = await prisma.warehouseInventory.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends warehouseInventoryFindManyArgs>(args?: Prisma.SelectSubset<T, warehouseInventoryFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$warehouseInventoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends WarehouseInventoryFindManyArgs>(args?: Prisma.SelectSubset<T, WarehouseInventoryFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WarehouseInventoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a WarehouseInventory.
-   * @param {warehouseInventoryCreateArgs} args - Arguments to create a WarehouseInventory.
+   * @param {WarehouseInventoryCreateArgs} args - Arguments to create a WarehouseInventory.
    * @example
    * // Create one WarehouseInventory
    * const WarehouseInventory = await prisma.warehouseInventory.create({
@@ -764,11 +738,11 @@ export interface warehouseInventoryDelegate<ExtArgs extends runtime.Types.Extens
    * })
    * 
    */
-  create<T extends warehouseInventoryCreateArgs>(args: Prisma.SelectSubset<T, warehouseInventoryCreateArgs<ExtArgs>>): Prisma.Prisma__warehouseInventoryClient<runtime.Types.Result.GetResult<Prisma.$warehouseInventoryPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends WarehouseInventoryCreateArgs>(args: Prisma.SelectSubset<T, WarehouseInventoryCreateArgs<ExtArgs>>): Prisma.Prisma__WarehouseInventoryClient<runtime.Types.Result.GetResult<Prisma.$WarehouseInventoryPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many WarehouseInventories.
-   * @param {warehouseInventoryCreateManyArgs} args - Arguments to create many WarehouseInventories.
+   * @param {WarehouseInventoryCreateManyArgs} args - Arguments to create many WarehouseInventories.
    * @example
    * // Create many WarehouseInventories
    * const warehouseInventory = await prisma.warehouseInventory.createMany({
@@ -778,11 +752,11 @@ export interface warehouseInventoryDelegate<ExtArgs extends runtime.Types.Extens
    * })
    *     
    */
-  createMany<T extends warehouseInventoryCreateManyArgs>(args?: Prisma.SelectSubset<T, warehouseInventoryCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends WarehouseInventoryCreateManyArgs>(args?: Prisma.SelectSubset<T, WarehouseInventoryCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create many WarehouseInventories and returns the data saved in the database.
-   * @param {warehouseInventoryCreateManyAndReturnArgs} args - Arguments to create many WarehouseInventories.
+   * @param {WarehouseInventoryCreateManyAndReturnArgs} args - Arguments to create many WarehouseInventories.
    * @example
    * // Create many WarehouseInventories
    * const warehouseInventory = await prisma.warehouseInventory.createManyAndReturn({
@@ -802,11 +776,11 @@ export interface warehouseInventoryDelegate<ExtArgs extends runtime.Types.Extens
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  createManyAndReturn<T extends warehouseInventoryCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, warehouseInventoryCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$warehouseInventoryPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+  createManyAndReturn<T extends WarehouseInventoryCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, WarehouseInventoryCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WarehouseInventoryPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Delete a WarehouseInventory.
-   * @param {warehouseInventoryDeleteArgs} args - Arguments to delete one WarehouseInventory.
+   * @param {WarehouseInventoryDeleteArgs} args - Arguments to delete one WarehouseInventory.
    * @example
    * // Delete one WarehouseInventory
    * const WarehouseInventory = await prisma.warehouseInventory.delete({
@@ -816,11 +790,11 @@ export interface warehouseInventoryDelegate<ExtArgs extends runtime.Types.Extens
    * })
    * 
    */
-  delete<T extends warehouseInventoryDeleteArgs>(args: Prisma.SelectSubset<T, warehouseInventoryDeleteArgs<ExtArgs>>): Prisma.Prisma__warehouseInventoryClient<runtime.Types.Result.GetResult<Prisma.$warehouseInventoryPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends WarehouseInventoryDeleteArgs>(args: Prisma.SelectSubset<T, WarehouseInventoryDeleteArgs<ExtArgs>>): Prisma.Prisma__WarehouseInventoryClient<runtime.Types.Result.GetResult<Prisma.$WarehouseInventoryPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one WarehouseInventory.
-   * @param {warehouseInventoryUpdateArgs} args - Arguments to update one WarehouseInventory.
+   * @param {WarehouseInventoryUpdateArgs} args - Arguments to update one WarehouseInventory.
    * @example
    * // Update one WarehouseInventory
    * const warehouseInventory = await prisma.warehouseInventory.update({
@@ -833,11 +807,11 @@ export interface warehouseInventoryDelegate<ExtArgs extends runtime.Types.Extens
    * })
    * 
    */
-  update<T extends warehouseInventoryUpdateArgs>(args: Prisma.SelectSubset<T, warehouseInventoryUpdateArgs<ExtArgs>>): Prisma.Prisma__warehouseInventoryClient<runtime.Types.Result.GetResult<Prisma.$warehouseInventoryPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends WarehouseInventoryUpdateArgs>(args: Prisma.SelectSubset<T, WarehouseInventoryUpdateArgs<ExtArgs>>): Prisma.Prisma__WarehouseInventoryClient<runtime.Types.Result.GetResult<Prisma.$WarehouseInventoryPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more WarehouseInventories.
-   * @param {warehouseInventoryDeleteManyArgs} args - Arguments to filter WarehouseInventories to delete.
+   * @param {WarehouseInventoryDeleteManyArgs} args - Arguments to filter WarehouseInventories to delete.
    * @example
    * // Delete a few WarehouseInventories
    * const { count } = await prisma.warehouseInventory.deleteMany({
@@ -847,13 +821,13 @@ export interface warehouseInventoryDelegate<ExtArgs extends runtime.Types.Extens
    * })
    * 
    */
-  deleteMany<T extends warehouseInventoryDeleteManyArgs>(args?: Prisma.SelectSubset<T, warehouseInventoryDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends WarehouseInventoryDeleteManyArgs>(args?: Prisma.SelectSubset<T, WarehouseInventoryDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more WarehouseInventories.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {warehouseInventoryUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {WarehouseInventoryUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many WarehouseInventories
    * const warehouseInventory = await prisma.warehouseInventory.updateMany({
@@ -866,11 +840,11 @@ export interface warehouseInventoryDelegate<ExtArgs extends runtime.Types.Extens
    * })
    * 
    */
-  updateMany<T extends warehouseInventoryUpdateManyArgs>(args: Prisma.SelectSubset<T, warehouseInventoryUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends WarehouseInventoryUpdateManyArgs>(args: Prisma.SelectSubset<T, WarehouseInventoryUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more WarehouseInventories and returns the data updated in the database.
-   * @param {warehouseInventoryUpdateManyAndReturnArgs} args - Arguments to update many WarehouseInventories.
+   * @param {WarehouseInventoryUpdateManyAndReturnArgs} args - Arguments to update many WarehouseInventories.
    * @example
    * // Update many WarehouseInventories
    * const warehouseInventory = await prisma.warehouseInventory.updateManyAndReturn({
@@ -896,11 +870,11 @@ export interface warehouseInventoryDelegate<ExtArgs extends runtime.Types.Extens
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  updateManyAndReturn<T extends warehouseInventoryUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, warehouseInventoryUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$warehouseInventoryPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+  updateManyAndReturn<T extends WarehouseInventoryUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, WarehouseInventoryUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WarehouseInventoryPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Create or update one WarehouseInventory.
-   * @param {warehouseInventoryUpsertArgs} args - Arguments to update or create a WarehouseInventory.
+   * @param {WarehouseInventoryUpsertArgs} args - Arguments to update or create a WarehouseInventory.
    * @example
    * // Update or create a WarehouseInventory
    * const warehouseInventory = await prisma.warehouseInventory.upsert({
@@ -915,14 +889,14 @@ export interface warehouseInventoryDelegate<ExtArgs extends runtime.Types.Extens
    *   }
    * })
    */
-  upsert<T extends warehouseInventoryUpsertArgs>(args: Prisma.SelectSubset<T, warehouseInventoryUpsertArgs<ExtArgs>>): Prisma.Prisma__warehouseInventoryClient<runtime.Types.Result.GetResult<Prisma.$warehouseInventoryPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends WarehouseInventoryUpsertArgs>(args: Prisma.SelectSubset<T, WarehouseInventoryUpsertArgs<ExtArgs>>): Prisma.Prisma__WarehouseInventoryClient<runtime.Types.Result.GetResult<Prisma.$WarehouseInventoryPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of WarehouseInventories.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {warehouseInventoryCountArgs} args - Arguments to filter WarehouseInventories to count.
+   * @param {WarehouseInventoryCountArgs} args - Arguments to filter WarehouseInventories to count.
    * @example
    * // Count the number of WarehouseInventories
    * const count = await prisma.warehouseInventory.count({
@@ -931,8 +905,8 @@ export interface warehouseInventoryDelegate<ExtArgs extends runtime.Types.Extens
    *   }
    * })
   **/
-  count<T extends warehouseInventoryCountArgs>(
-    args?: Prisma.Subset<T, warehouseInventoryCountArgs>,
+  count<T extends WarehouseInventoryCountArgs>(
+    args?: Prisma.Subset<T, WarehouseInventoryCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -971,7 +945,7 @@ export interface warehouseInventoryDelegate<ExtArgs extends runtime.Types.Extens
    * Group by WarehouseInventory.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {warehouseInventoryGroupByArgs} args - Group by arguments.
+   * @param {WarehouseInventoryGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -986,14 +960,14 @@ export interface warehouseInventoryDelegate<ExtArgs extends runtime.Types.Extens
    * 
   **/
   groupBy<
-    T extends warehouseInventoryGroupByArgs,
+    T extends WarehouseInventoryGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: warehouseInventoryGroupByArgs['orderBy'] }
-      : { orderBy?: warehouseInventoryGroupByArgs['orderBy'] },
+      ? { orderBy: WarehouseInventoryGroupByArgs['orderBy'] }
+      : { orderBy?: WarehouseInventoryGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1042,23 +1016,23 @@ export interface warehouseInventoryDelegate<ExtArgs extends runtime.Types.Extens
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, warehouseInventoryGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetWarehouseInventoryGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, WarehouseInventoryGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetWarehouseInventoryGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the warehouseInventory model
+ * Fields of the WarehouseInventory model
  */
-readonly fields: warehouseInventoryFieldRefs;
+readonly fields: WarehouseInventoryFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for warehouseInventory.
+ * The delegate class that acts as a "Promise-like" for WarehouseInventory.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__warehouseInventoryClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__WarehouseInventoryClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  warehouse<T extends Prisma.warehouseDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.warehouseDefaultArgs<ExtArgs>>): Prisma.Prisma__warehouseClient<runtime.Types.Result.GetResult<Prisma.$warehousePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  product<T extends Prisma.productDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.productDefaultArgs<ExtArgs>>): Prisma.Prisma__productClient<runtime.Types.Result.GetResult<Prisma.$productPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  warehouse<T extends Prisma.WarehouseDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.WarehouseDefaultArgs<ExtArgs>>): Prisma.Prisma__WarehouseClient<runtime.Types.Result.GetResult<Prisma.$WarehousePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  product<T extends Prisma.ProductDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ProductDefaultArgs<ExtArgs>>): Prisma.Prisma__ProductClient<runtime.Types.Result.GetResult<Prisma.$ProductPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1085,430 +1059,427 @@ export interface Prisma__warehouseInventoryClient<T, Null = never, ExtArgs exten
 
 
 /**
- * Fields of the warehouseInventory model
+ * Fields of the WarehouseInventory model
  */
-export interface warehouseInventoryFieldRefs {
-  readonly id: Prisma.FieldRef<"warehouseInventory", 'Int'>
-  readonly warehouse_id: Prisma.FieldRef<"warehouseInventory", 'Int'>
-  readonly product_id: Prisma.FieldRef<"warehouseInventory", 'Int'>
-  readonly quantity: Prisma.FieldRef<"warehouseInventory", 'Int'>
-  readonly version: Prisma.FieldRef<"warehouseInventory", 'Int'>
-  readonly created_at: Prisma.FieldRef<"warehouseInventory", 'DateTime'>
-  readonly updated_at: Prisma.FieldRef<"warehouseInventory", 'DateTime'>
+export interface WarehouseInventoryFieldRefs {
+  readonly id: Prisma.FieldRef<"WarehouseInventory", 'Int'>
+  readonly warehouseId: Prisma.FieldRef<"WarehouseInventory", 'Int'>
+  readonly productId: Prisma.FieldRef<"WarehouseInventory", 'Int'>
+  readonly quantity: Prisma.FieldRef<"WarehouseInventory", 'Int'>
 }
     
 
 // Custom InputTypes
 /**
- * warehouseInventory findUnique
+ * WarehouseInventory findUnique
  */
-export type warehouseInventoryFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseInventoryFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the warehouseInventory
+   * Select specific fields to fetch from the WarehouseInventory
    */
-  select?: Prisma.warehouseInventorySelect<ExtArgs> | null
+  select?: Prisma.WarehouseInventorySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the warehouseInventory
+   * Omit specific fields from the WarehouseInventory
    */
-  omit?: Prisma.warehouseInventoryOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseInventoryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.warehouseInventoryInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInventoryInclude<ExtArgs> | null
   /**
-   * Filter, which warehouseInventory to fetch.
+   * Filter, which WarehouseInventory to fetch.
    */
-  where: Prisma.warehouseInventoryWhereUniqueInput
+  where: Prisma.WarehouseInventoryWhereUniqueInput
 }
 
 /**
- * warehouseInventory findUniqueOrThrow
+ * WarehouseInventory findUniqueOrThrow
  */
-export type warehouseInventoryFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseInventoryFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the warehouseInventory
+   * Select specific fields to fetch from the WarehouseInventory
    */
-  select?: Prisma.warehouseInventorySelect<ExtArgs> | null
+  select?: Prisma.WarehouseInventorySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the warehouseInventory
+   * Omit specific fields from the WarehouseInventory
    */
-  omit?: Prisma.warehouseInventoryOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseInventoryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.warehouseInventoryInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInventoryInclude<ExtArgs> | null
   /**
-   * Filter, which warehouseInventory to fetch.
+   * Filter, which WarehouseInventory to fetch.
    */
-  where: Prisma.warehouseInventoryWhereUniqueInput
+  where: Prisma.WarehouseInventoryWhereUniqueInput
 }
 
 /**
- * warehouseInventory findFirst
+ * WarehouseInventory findFirst
  */
-export type warehouseInventoryFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseInventoryFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the warehouseInventory
+   * Select specific fields to fetch from the WarehouseInventory
    */
-  select?: Prisma.warehouseInventorySelect<ExtArgs> | null
+  select?: Prisma.WarehouseInventorySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the warehouseInventory
+   * Omit specific fields from the WarehouseInventory
    */
-  omit?: Prisma.warehouseInventoryOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseInventoryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.warehouseInventoryInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInventoryInclude<ExtArgs> | null
   /**
-   * Filter, which warehouseInventory to fetch.
+   * Filter, which WarehouseInventory to fetch.
    */
-  where?: Prisma.warehouseInventoryWhereInput
+  where?: Prisma.WarehouseInventoryWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of warehouseInventories to fetch.
+   * Determine the order of WarehouseInventories to fetch.
    */
-  orderBy?: Prisma.warehouseInventoryOrderByWithRelationInput | Prisma.warehouseInventoryOrderByWithRelationInput[]
+  orderBy?: Prisma.WarehouseInventoryOrderByWithRelationInput | Prisma.WarehouseInventoryOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for warehouseInventories.
+   * Sets the position for searching for WarehouseInventories.
    */
-  cursor?: Prisma.warehouseInventoryWhereUniqueInput
+  cursor?: Prisma.WarehouseInventoryWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` warehouseInventories from the position of the cursor.
+   * Take `±n` WarehouseInventories from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` warehouseInventories.
+   * Skip the first `n` WarehouseInventories.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of warehouseInventories.
+   * Filter by unique combinations of WarehouseInventories.
    */
   distinct?: Prisma.WarehouseInventoryScalarFieldEnum | Prisma.WarehouseInventoryScalarFieldEnum[]
 }
 
 /**
- * warehouseInventory findFirstOrThrow
+ * WarehouseInventory findFirstOrThrow
  */
-export type warehouseInventoryFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseInventoryFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the warehouseInventory
+   * Select specific fields to fetch from the WarehouseInventory
    */
-  select?: Prisma.warehouseInventorySelect<ExtArgs> | null
+  select?: Prisma.WarehouseInventorySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the warehouseInventory
+   * Omit specific fields from the WarehouseInventory
    */
-  omit?: Prisma.warehouseInventoryOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseInventoryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.warehouseInventoryInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInventoryInclude<ExtArgs> | null
   /**
-   * Filter, which warehouseInventory to fetch.
+   * Filter, which WarehouseInventory to fetch.
    */
-  where?: Prisma.warehouseInventoryWhereInput
+  where?: Prisma.WarehouseInventoryWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of warehouseInventories to fetch.
+   * Determine the order of WarehouseInventories to fetch.
    */
-  orderBy?: Prisma.warehouseInventoryOrderByWithRelationInput | Prisma.warehouseInventoryOrderByWithRelationInput[]
+  orderBy?: Prisma.WarehouseInventoryOrderByWithRelationInput | Prisma.WarehouseInventoryOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for warehouseInventories.
+   * Sets the position for searching for WarehouseInventories.
    */
-  cursor?: Prisma.warehouseInventoryWhereUniqueInput
+  cursor?: Prisma.WarehouseInventoryWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` warehouseInventories from the position of the cursor.
+   * Take `±n` WarehouseInventories from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` warehouseInventories.
+   * Skip the first `n` WarehouseInventories.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of warehouseInventories.
+   * Filter by unique combinations of WarehouseInventories.
    */
   distinct?: Prisma.WarehouseInventoryScalarFieldEnum | Prisma.WarehouseInventoryScalarFieldEnum[]
 }
 
 /**
- * warehouseInventory findMany
+ * WarehouseInventory findMany
  */
-export type warehouseInventoryFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseInventoryFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the warehouseInventory
+   * Select specific fields to fetch from the WarehouseInventory
    */
-  select?: Prisma.warehouseInventorySelect<ExtArgs> | null
+  select?: Prisma.WarehouseInventorySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the warehouseInventory
+   * Omit specific fields from the WarehouseInventory
    */
-  omit?: Prisma.warehouseInventoryOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseInventoryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.warehouseInventoryInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInventoryInclude<ExtArgs> | null
   /**
-   * Filter, which warehouseInventories to fetch.
+   * Filter, which WarehouseInventories to fetch.
    */
-  where?: Prisma.warehouseInventoryWhereInput
+  where?: Prisma.WarehouseInventoryWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of warehouseInventories to fetch.
+   * Determine the order of WarehouseInventories to fetch.
    */
-  orderBy?: Prisma.warehouseInventoryOrderByWithRelationInput | Prisma.warehouseInventoryOrderByWithRelationInput[]
+  orderBy?: Prisma.WarehouseInventoryOrderByWithRelationInput | Prisma.WarehouseInventoryOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing warehouseInventories.
+   * Sets the position for listing WarehouseInventories.
    */
-  cursor?: Prisma.warehouseInventoryWhereUniqueInput
+  cursor?: Prisma.WarehouseInventoryWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` warehouseInventories from the position of the cursor.
+   * Take `±n` WarehouseInventories from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` warehouseInventories.
+   * Skip the first `n` WarehouseInventories.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of warehouseInventories.
+   * Filter by unique combinations of WarehouseInventories.
    */
   distinct?: Prisma.WarehouseInventoryScalarFieldEnum | Prisma.WarehouseInventoryScalarFieldEnum[]
 }
 
 /**
- * warehouseInventory create
+ * WarehouseInventory create
  */
-export type warehouseInventoryCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseInventoryCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the warehouseInventory
+   * Select specific fields to fetch from the WarehouseInventory
    */
-  select?: Prisma.warehouseInventorySelect<ExtArgs> | null
+  select?: Prisma.WarehouseInventorySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the warehouseInventory
+   * Omit specific fields from the WarehouseInventory
    */
-  omit?: Prisma.warehouseInventoryOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseInventoryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.warehouseInventoryInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInventoryInclude<ExtArgs> | null
   /**
-   * The data needed to create a warehouseInventory.
+   * The data needed to create a WarehouseInventory.
    */
-  data: Prisma.XOR<Prisma.warehouseInventoryCreateInput, Prisma.warehouseInventoryUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.WarehouseInventoryCreateInput, Prisma.WarehouseInventoryUncheckedCreateInput>
 }
 
 /**
- * warehouseInventory createMany
+ * WarehouseInventory createMany
  */
-export type warehouseInventoryCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseInventoryCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many warehouseInventories.
+   * The data used to create many WarehouseInventories.
    */
-  data: Prisma.warehouseInventoryCreateManyInput | Prisma.warehouseInventoryCreateManyInput[]
+  data: Prisma.WarehouseInventoryCreateManyInput | Prisma.WarehouseInventoryCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * warehouseInventory createManyAndReturn
+ * WarehouseInventory createManyAndReturn
  */
-export type warehouseInventoryCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseInventoryCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the warehouseInventory
+   * Select specific fields to fetch from the WarehouseInventory
    */
-  select?: Prisma.warehouseInventorySelectCreateManyAndReturn<ExtArgs> | null
+  select?: Prisma.WarehouseInventorySelectCreateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the warehouseInventory
+   * Omit specific fields from the WarehouseInventory
    */
-  omit?: Prisma.warehouseInventoryOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseInventoryOmit<ExtArgs> | null
   /**
-   * The data used to create many warehouseInventories.
+   * The data used to create many WarehouseInventories.
    */
-  data: Prisma.warehouseInventoryCreateManyInput | Prisma.warehouseInventoryCreateManyInput[]
+  data: Prisma.WarehouseInventoryCreateManyInput | Prisma.WarehouseInventoryCreateManyInput[]
   skipDuplicates?: boolean
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.warehouseInventoryIncludeCreateManyAndReturn<ExtArgs> | null
+  include?: Prisma.WarehouseInventoryIncludeCreateManyAndReturn<ExtArgs> | null
 }
 
 /**
- * warehouseInventory update
+ * WarehouseInventory update
  */
-export type warehouseInventoryUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseInventoryUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the warehouseInventory
+   * Select specific fields to fetch from the WarehouseInventory
    */
-  select?: Prisma.warehouseInventorySelect<ExtArgs> | null
+  select?: Prisma.WarehouseInventorySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the warehouseInventory
+   * Omit specific fields from the WarehouseInventory
    */
-  omit?: Prisma.warehouseInventoryOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseInventoryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.warehouseInventoryInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInventoryInclude<ExtArgs> | null
   /**
-   * The data needed to update a warehouseInventory.
+   * The data needed to update a WarehouseInventory.
    */
-  data: Prisma.XOR<Prisma.warehouseInventoryUpdateInput, Prisma.warehouseInventoryUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.WarehouseInventoryUpdateInput, Prisma.WarehouseInventoryUncheckedUpdateInput>
   /**
-   * Choose, which warehouseInventory to update.
+   * Choose, which WarehouseInventory to update.
    */
-  where: Prisma.warehouseInventoryWhereUniqueInput
+  where: Prisma.WarehouseInventoryWhereUniqueInput
 }
 
 /**
- * warehouseInventory updateMany
+ * WarehouseInventory updateMany
  */
-export type warehouseInventoryUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseInventoryUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update warehouseInventories.
+   * The data used to update WarehouseInventories.
    */
-  data: Prisma.XOR<Prisma.warehouseInventoryUpdateManyMutationInput, Prisma.warehouseInventoryUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.WarehouseInventoryUpdateManyMutationInput, Prisma.WarehouseInventoryUncheckedUpdateManyInput>
   /**
-   * Filter which warehouseInventories to update
+   * Filter which WarehouseInventories to update
    */
-  where?: Prisma.warehouseInventoryWhereInput
+  where?: Prisma.WarehouseInventoryWhereInput
   /**
-   * Limit how many warehouseInventories to update.
+   * Limit how many WarehouseInventories to update.
    */
   limit?: number
 }
 
 /**
- * warehouseInventory updateManyAndReturn
+ * WarehouseInventory updateManyAndReturn
  */
-export type warehouseInventoryUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseInventoryUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the warehouseInventory
+   * Select specific fields to fetch from the WarehouseInventory
    */
-  select?: Prisma.warehouseInventorySelectUpdateManyAndReturn<ExtArgs> | null
+  select?: Prisma.WarehouseInventorySelectUpdateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the warehouseInventory
+   * Omit specific fields from the WarehouseInventory
    */
-  omit?: Prisma.warehouseInventoryOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseInventoryOmit<ExtArgs> | null
   /**
-   * The data used to update warehouseInventories.
+   * The data used to update WarehouseInventories.
    */
-  data: Prisma.XOR<Prisma.warehouseInventoryUpdateManyMutationInput, Prisma.warehouseInventoryUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.WarehouseInventoryUpdateManyMutationInput, Prisma.WarehouseInventoryUncheckedUpdateManyInput>
   /**
-   * Filter which warehouseInventories to update
+   * Filter which WarehouseInventories to update
    */
-  where?: Prisma.warehouseInventoryWhereInput
+  where?: Prisma.WarehouseInventoryWhereInput
   /**
-   * Limit how many warehouseInventories to update.
+   * Limit how many WarehouseInventories to update.
    */
   limit?: number
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.warehouseInventoryIncludeUpdateManyAndReturn<ExtArgs> | null
+  include?: Prisma.WarehouseInventoryIncludeUpdateManyAndReturn<ExtArgs> | null
 }
 
 /**
- * warehouseInventory upsert
+ * WarehouseInventory upsert
  */
-export type warehouseInventoryUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseInventoryUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the warehouseInventory
+   * Select specific fields to fetch from the WarehouseInventory
    */
-  select?: Prisma.warehouseInventorySelect<ExtArgs> | null
+  select?: Prisma.WarehouseInventorySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the warehouseInventory
+   * Omit specific fields from the WarehouseInventory
    */
-  omit?: Prisma.warehouseInventoryOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseInventoryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.warehouseInventoryInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInventoryInclude<ExtArgs> | null
   /**
-   * The filter to search for the warehouseInventory to update in case it exists.
+   * The filter to search for the WarehouseInventory to update in case it exists.
    */
-  where: Prisma.warehouseInventoryWhereUniqueInput
+  where: Prisma.WarehouseInventoryWhereUniqueInput
   /**
-   * In case the warehouseInventory found by the `where` argument doesn't exist, create a new warehouseInventory with this data.
+   * In case the WarehouseInventory found by the `where` argument doesn't exist, create a new WarehouseInventory with this data.
    */
-  create: Prisma.XOR<Prisma.warehouseInventoryCreateInput, Prisma.warehouseInventoryUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.WarehouseInventoryCreateInput, Prisma.WarehouseInventoryUncheckedCreateInput>
   /**
-   * In case the warehouseInventory was found with the provided `where` argument, update it with this data.
+   * In case the WarehouseInventory was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.warehouseInventoryUpdateInput, Prisma.warehouseInventoryUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.WarehouseInventoryUpdateInput, Prisma.WarehouseInventoryUncheckedUpdateInput>
 }
 
 /**
- * warehouseInventory delete
+ * WarehouseInventory delete
  */
-export type warehouseInventoryDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseInventoryDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the warehouseInventory
+   * Select specific fields to fetch from the WarehouseInventory
    */
-  select?: Prisma.warehouseInventorySelect<ExtArgs> | null
+  select?: Prisma.WarehouseInventorySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the warehouseInventory
+   * Omit specific fields from the WarehouseInventory
    */
-  omit?: Prisma.warehouseInventoryOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseInventoryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.warehouseInventoryInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInventoryInclude<ExtArgs> | null
   /**
-   * Filter which warehouseInventory to delete.
+   * Filter which WarehouseInventory to delete.
    */
-  where: Prisma.warehouseInventoryWhereUniqueInput
+  where: Prisma.WarehouseInventoryWhereUniqueInput
 }
 
 /**
- * warehouseInventory deleteMany
+ * WarehouseInventory deleteMany
  */
-export type warehouseInventoryDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseInventoryDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which warehouseInventories to delete
+   * Filter which WarehouseInventories to delete
    */
-  where?: Prisma.warehouseInventoryWhereInput
+  where?: Prisma.WarehouseInventoryWhereInput
   /**
-   * Limit how many warehouseInventories to delete.
+   * Limit how many WarehouseInventories to delete.
    */
   limit?: number
 }
 
 /**
- * warehouseInventory without action
+ * WarehouseInventory without action
  */
-export type warehouseInventoryDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type WarehouseInventoryDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the warehouseInventory
+   * Select specific fields to fetch from the WarehouseInventory
    */
-  select?: Prisma.warehouseInventorySelect<ExtArgs> | null
+  select?: Prisma.WarehouseInventorySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the warehouseInventory
+   * Omit specific fields from the WarehouseInventory
    */
-  omit?: Prisma.warehouseInventoryOmit<ExtArgs> | null
+  omit?: Prisma.WarehouseInventoryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.warehouseInventoryInclude<ExtArgs> | null
+  include?: Prisma.WarehouseInventoryInclude<ExtArgs> | null
 }
