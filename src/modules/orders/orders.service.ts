@@ -13,14 +13,17 @@ export class OrdersService {
     if (!validateCustomer) {
       throw new Error('Customer not found');
     }
+    const productIds= [...new Set(createOrderDto.item.map((item) => item.productId))];
+    const products = await this.prisma.product.findMany({
+      where:{
+        id:{ in: createOrderDto.item.map((item) => item.productId),}
+      }
+    })
+    const foundProductIds = new Set(products.map((product) => product.id));
 
-    for (const item of createOrderDto.item) {
-      const product = await this.prisma.product.findUnique({
-        where: { id: item.productId },
-      });
-
-      if (!product) {
-        throw new Error(`Product ${item.productId} not found`);
+    for (const productId of productIds) {
+      if (!foundProductIds.has(productId)) {
+        throw new Error(`Product ${productId} not found`);
       }
     }
     const order = await this.prisma.order.create({
