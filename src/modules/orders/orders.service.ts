@@ -13,12 +13,14 @@ export class OrdersService {
     if (!validateCustomer) {
       throw new Error('Customer not found');
     }
-    const productIds= [...new Set(createOrderDto.item.map((item) => item.productId))];
+    const productIds = [
+      ...new Set(createOrderDto.item.map((item) => item.productId)),
+    ];
     const products = await this.prisma.product.findMany({
-      where:{
-        id:{ in: createOrderDto.item.map((item) => item.productId),}
-      }
-    })
+      where: {
+        id: { in: createOrderDto.item.map((item) => item.productId) },
+      },
+    });
     const foundProductIds = new Set(products.map((product) => product.id));
 
     for (const productId of productIds) {
@@ -26,39 +28,48 @@ export class OrdersService {
         throw new Error(`Product ${productId} not found`);
       }
     }
-    const order = await this.prisma.order.create({
-      data: {
-        customerId: createOrderDto.customerId,
-        warehouseId: createOrderDto.warehouseId,
-        status: 'PENDING',
-        totalAmount: createOrderDto.item.reduce(
-          (acc, item) => acc + item.quantity * item.unitPrice,
-          0,
-        ),
+    await this.prisma.$transaction(
+      async (tx) => {
+        const availableProducts = await tx.product.findMany({
+          where: {
+            id: { in: productIds },
+            quantity: {
+              gte: { in: createOrderDto.item.map((item) => item.quantity) },
+            },
+          },
+        });
+        const order = await tx.orderItem.createMany({
+          where: {
+            customerId: createOrderDto.customerId,
+          },
+          data: {
+            ...createOrderDto.item.map((item) => ({
+              productId: item.productId,
+              quantity: item.quantity,
+              unitPrice: item.unitPrice,
+            })),
+          },
+        });
+        const updatedProducts = await tx.product.updateMany({
+          where: {
+            id: { in: productIds },
+            quantity: {
+              gte: { in: createOrderDto.item.map((item) => item.quantity) },
+            },
+          },
+          data: {
+            quantity: {
+              decrement: {
+                in: createOrderDto.item.map((item) => item.quantity),
+              },
+            },
+          },
+        });
       },
-    });
-    const orderItems = await this.prisma.orderItem.createMany({
-      data: createOrderDto.item.map((item) => ({
-        orderId: Number(order.id),
-        productId: item.productId,
-        quantity: item.quantity,
-        unitPrice: item.unitPrice,
-      })),
-    });
-    const updateInventory = await this.prisma.product.updateMany({
-      where: {
-        id: { in: createOrderDto.item.map((item) => item.productId) },
+      {
+        isolationLevel: 'Serializable',
       },
-      data: {
-        quantity: {
-          decrement: createOrderDto.item.reduce(
-            (acc, item) => acc + item.quantity,
-            0,
-          ),
-        },
-      },
-    });
-    return { order, orderItems, updateInventory };
+    );
   }
   async findAll() {
     return await this.prisma.customer.findMany({});
