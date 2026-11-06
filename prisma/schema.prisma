@@ -56,6 +56,7 @@ model Product {
   sku       String   @unique
   name      String
   price     Decimal  @db.Decimal(10, 2)
+  quantity  Int      @default(0)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -77,9 +78,8 @@ model Warehouse {
 
 model WarehouseInventory {
   id          Int @id @default(autoincrement())
-  warehouseId Int @unique
-  productId   Int @unique
-  quantity    Int @default(0)
+  warehouseId Int 
+  productId   Int 
   version     Int @default(1)
 
   warehouse Warehouse @relation(fields: [warehouseId], references: [id], onDelete: Cascade)
