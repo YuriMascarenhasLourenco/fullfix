@@ -2,6 +2,7 @@ import { BadRequestException, Injectable } from '@nestjs/common';
 import { Prisma } from 'generated/prisma/client';
 import { PrismaService } from 'src/database/prisma/prisma.service';
 import { CreateOrderDto } from './dto/create-order.dto';
+import { ListFilterOrdersDto } from './dto/list-orders.dto';
 
 @Injectable()
 export class OrdersService {
@@ -100,7 +101,37 @@ export class OrdersService {
     throw new Error('Transaction retry limit exceeded');
   }
 
-  async findAll() {
-    return await this.prisma.customer.findMany({});
+  async findAll(filter: ListFilterOrdersDto) {
+    const {
+      limit = 10,
+      offset = 0,
+      page = 1,
+      customerId,
+      status,
+      createdFrom,
+      createdTo,
+    } = filter;
+    const where: Prisma.OrderWhereInput = {
+      ...(customerId && { customerId: Number(customerId) }),
+      ...(status && { status }),
+      ...(createdFrom && { createdAt: { gte: createdFrom } }),
+      ...(createdTo && { createdAt: { lte: createdTo } }),
+    };
+    const [orders, totalCount] = await prisma.$transaction(
+      async(tx) => [
+       await  tx.order.findMany({
+          where,
+          skip: + (page - 1) * limit,
+          take: limit,
+          orderBy: { createdAt: 'desc' },
+        }),
+        await tx.order.count({ where }),
+      ],
+      {
+        TransactionIsolationLevel:
+          Prisma.TransactionIsolationLevel.RepeatableRead,
+      },
+    );
+    return { orders, totalCount };
   }
 }
